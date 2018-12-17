@@ -1,0 +1,26 @@
+{
+  "name": "diy-react",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/jmhiggins42/diy-react.git"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "jasmine",
+    "babel",
+    "webpack"
+  ],
+  "author": "John Higgins",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/jmhiggins42/diy-react/issues"
+  },
+  "homepage": "https://gitlab.com/jmhiggins42/diy-react#readme"
+}
