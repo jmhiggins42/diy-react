@@ -5,9 +5,9 @@
   "main": "dist/public/index.html",
   "scripts": {
     "prebuild": "npm run clean",
-    "build": "bash scripts/build.sh",
+    "build": "./scripts/build.sh",
     "postbuild": "tsc",
-    "clean": "bash scripts/clean.sh",
+    "clean": "./scripts/clean.sh",
     "prestart": "npm run build",
     "start": "npm run serve:dev",
     "serve:dev": "webpack --watch --mode=development",
