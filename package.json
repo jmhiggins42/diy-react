@@ -1,17 +1,20 @@
 {
   "name": "diy-react",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Basic Typescript React example",
   "main": "dist/public/index.html",
   "scripts": {
     "prebuild": "npm run clean",
     "build": "./scripts/build.sh",
+    "build:dev": "NODE_ENV=development npm run build",
+    "build:prod": "NODE_ENV=production npm run build",
     "postbuild": "tsc",
     "clean": "./scripts/clean.sh",
-    "prestart": "npm run build",
-    "start": "npm run serve:dev",
-    "serve:dev": "webpack --watch --mode=development",
-    "serve:prod": "webpack --watch --mode=production",
+    "start": "./scripts/serve.sh",
+    "start:dev": "NODE_ENV=development npm run start",
+    "start:prod": "NODE_ENV=production npm run start",
+    "serve:dev": "webpack-dev-server --open --mode=development",
+    "serve:prod": "webpack-dev-server --open --mode=production",
     "test": "npm run build && jasmine"
   },
   "repository": {
@@ -42,7 +45,8 @@
     "tslint": "^5.12.1",
     "typescript": "^3.2.4",
     "webpack": "^4.27.1",
-    "webpack-cli": "^3.1.2"
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
     "express": "^4.16.4",

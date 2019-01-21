@@ -2,9 +2,7 @@
 /node_modules
 
 # Build
-/dist/app/
-/dist/client/
-/dist/public/js/
+/dist
 
 # Test
 /test

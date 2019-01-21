@@ -5,9 +5,8 @@ export interface IHelloProps {
   framework: string;
 }
 
-// 'IHelloProps' describes the shape of props.
-// State is never set so we use the '{}' type.
-export class Hello extends React.Component<IHelloProps, {}> {
+// Class Component example
+class Hello extends React.Component<IHelloProps, {}> {
   public render () {
     return (
       <h1>
@@ -16,3 +15,12 @@ export class Hello extends React.Component<IHelloProps, {}> {
     );
   }
 }
+
+// Functional Component example
+const HelloAsStatelessComponent = (props: IHelloProps, _: {}) => (
+  <h1>
+    Hello from {props.compiler} and {props.framework}!
+  </h1>
+);
+
+export default Hello;

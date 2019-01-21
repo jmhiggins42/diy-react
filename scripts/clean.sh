@@ -1,6 +1,6 @@
 #! /bin/bash
 
-for dir in dist/app dist/client dist/public/js dist/public/bundle.js dist/public/bundle.js.map
+for dir in dist
 do
   rm -fr $dir
 done

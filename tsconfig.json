@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
     "outDir": "./dist/",
+    "removeComments": true,
     "sourceMap": true,
     "noImplicitAny": true,
     "module": "commonjs",
     "strict": true,
     "target": "es5",
+    "lib": ["dom", "es7", "es6"],
     "jsx": "react"
   },
   "include": ["./src/**/*"]

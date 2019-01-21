@@ -1,5 +1,10 @@
-#! /bin/bash
+#! /bin/sh
 
 mkdir -p dist/public/js
-cp node_modules/react/umd/react.development.js dist/public/js
-cp node_modules/react-dom/umd/react-dom.development.js dist/public/js
+
+if [ "$NODE_ENV" = "production" ]
+then
+  ./scripts/build.prod.sh
+else
+  ./scripts/build.dev.sh
+fi
