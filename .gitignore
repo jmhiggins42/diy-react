@@ -3,6 +3,8 @@
 
 # Build
 /dist
+server.js
+webpack.*.config.js
 
 # Test
 /test
