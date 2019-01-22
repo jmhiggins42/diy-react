@@ -1,25 +1,24 @@
 {
   "name": "diy-react",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Basic Typescript React example",
   "main": "server/index.ts",
   "scripts": {
     "build": "./scripts/build.sh",
-    "build:dev": "NODE_ENV=development npm run build",
-    "build:prod": "NODE_ENV=production npm run build",
+    "build:dist": "npm run lint:src; tsc -b src",
     "build:test": "npm run lint:spec; tsc -b spec",
-    "postbuild": "npm run lint:src; tsc -b src",
     "lint": "npm run lint:src && npm run lint:spec",
     "lint:src": "tslint --project src/tsconfig.json",
     "lint:spec": "tslint --project spec/tsconfig.json",
+    "cache": "./scripts/cache.sh",
     "clean": "./scripts/clean.sh",
+    "clear": "npm run clean all; npm run clean cache",
     "start": "./scripts/serve.sh",
-    "start:dev": "NODE_ENV=development npm run start",
-    "start:prod": "NODE_ENV=production npm run start",
+    "start:dev": "npm run start dev",
+    "start:prod": "npm run start prod",
     "serve": "node dist/server/index.js",
-    "serve:dev": "NODE_ENV=development npm run serve",
-    "serve:prod": "NODE_ENV=production npm run serve",
-    "test": "jest"
+    "test": "./scripts/test.sh",
+    "posttest": "npm run cache save"
   },
   "repository": {
     "type": "git",

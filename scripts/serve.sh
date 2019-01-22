@@ -1,10 +1,14 @@
 #! /bin/sh
 
-npm run build
-
-if [ "$NODE_ENV" = "production" ]
+if [ ! -d "dist" ]
 then
-  npm run serve:prod
+  npm run build
+fi
+
+if [ "$1" = "production" ] || [ "$1" = "prod" ]
+then
+  ./scripts/prebuild.sh "$1"
+  NODE_ENV=production npm run serve
 else
-  npm run serve:dev
+  NODE_ENV=development npm run serve
 fi
