@@ -1,0 +1,8 @@
+{
+  "extends": "..",
+  "compilerOptions": {
+    "outDir": "../.test/",
+    "rootDir": "."
+  },
+  "references": [{ "path": "./app" }, { "path": "./client" }]
+}

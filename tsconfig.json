@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
+    "composite": true,
+    "declaration": true,
+    "outDir": "./dist",
+    "rootDir": ".",
     "removeComments": true,
     "sourceMap": true,
     "noImplicitAny": true,
@@ -9,6 +12,5 @@
     "target": "es5",
     "lib": ["dom", "es7", "es6"],
     "jsx": "react"
-  },
-  "include": ["./src/**/*"]
+  }
 }

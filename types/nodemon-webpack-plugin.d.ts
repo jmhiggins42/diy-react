@@ -5,7 +5,7 @@ declare module 'nodemon-webpack-plugin' {
     watch: string;
   }
   class NodemonPlugin {
-    constructor (options: IPluginOptions);
+    constructor (options?: IPluginOptions);
   }
   export = NodemonPlugin;
 }

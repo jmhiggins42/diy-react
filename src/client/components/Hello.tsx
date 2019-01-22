@@ -6,7 +6,7 @@ export interface IHelloProps {
 }
 
 // Class Component example
-class Hello extends React.Component<IHelloProps, {}> {
+export class Hello extends React.Component<IHelloProps, {}> {
   public render () {
     return (
       <h1>
@@ -17,10 +17,8 @@ class Hello extends React.Component<IHelloProps, {}> {
 }
 
 // Functional Component example
-const HelloAsStatelessComponent = (props: IHelloProps, _: {}) => (
+export const HelloAsStatelessComponent = (props: IHelloProps, _: {}) => (
   <h1>
     Hello from {props.compiler} and {props.framework}!
   </h1>
 );
-
-export default Hello;

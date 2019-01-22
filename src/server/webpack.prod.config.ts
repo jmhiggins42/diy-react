@@ -1,15 +1,13 @@
-/// <reference path='./types/nodemon-webpack-plugin.d.ts' />
+/// <reference path='../../types/nodemon-webpack-plugin.d.ts' />
 
-import { join } from 'path';
+import { resolve } from 'path';
 
 import NodemonPlugin = require('nodemon-webpack-plugin');
 import * as webpack from 'webpack';
 import * as WDS from 'webpack-dev-server';
 
 const wdsConfig: WDS.Configuration = {
-  contentBase: join(__dirname, 'dist/public'),
-  hot: true,
-  open: true,
+  contentBase: resolve(__dirname, '../public'),
   overlay: {
     errors: true,
     warnings: true
@@ -28,20 +26,19 @@ const wdsConfig: WDS.Configuration = {
 
 // tslint:disable:max-line-length
 const config: webpack.Configuration = {
-  entry: './src/client/index.tsx',
-  mode: 'development',
+  entry: resolve(__dirname, '../../src/client/index.tsx'),
+  mode: 'production',
   output: {
     filename: 'bundle.js',
-    path: __dirname + '/dist/public/js'
+    path: resolve(__dirname, '../public/js')
   },
 
   plugins: [
     new NodemonPlugin({
       ext: 'ts,tsx,js,json',
-      script: join(__dirname, '/dist/app/index.js'),
-      watch: join(__dirname, '/src/app')
-    }) as webpack.Plugin,
-    new webpack.HotModuleReplacementPlugin()
+      script: resolve(__dirname, '../app/index.js'),
+      watch: resolve(__dirname, '../../src/app')
+    }) as webpack.Plugin
   ],
 
   // Enable sourcemaps for debugging webpack's output.

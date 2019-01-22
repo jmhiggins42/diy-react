@@ -1,0 +1,12 @@
+{
+  "extends": "..",
+  "compilerOptions": {
+    "outDir": "../dist/",
+    "rootDir": "."
+  },
+  "references": [
+    { "path": "./app" },
+    { "path": "./client" },
+    { "path": "./server" }
+  ]
+}

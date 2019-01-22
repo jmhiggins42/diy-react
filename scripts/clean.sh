@@ -1,6 +1,6 @@
 #! /bin/bash
 
-for loc in dist server.js webpack.dev.config.js webpack.prod.config.js
+for loc in dist .test
 do
   rm -fr $loc
 done
