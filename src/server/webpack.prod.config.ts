@@ -1,5 +1,3 @@
-/// <reference path='../../types/nodemon-webpack-plugin.d.ts' />
-
 import { resolve } from 'path';
 
 import NodemonPlugin = require('nodemon-webpack-plugin');
@@ -34,10 +32,10 @@ const config: webpack.Configuration = {
   },
 
   plugins: [
-    new NodemonPlugin({
+    new NodemonPlugin.default({
       ext: 'ts,tsx,js,json',
       script: resolve(__dirname, '../app/index.js'),
-      watch: resolve(__dirname, '../../src/app')
+      watch: [resolve(__dirname, '../../src/app')]
     }) as webpack.Plugin
   ],
 
