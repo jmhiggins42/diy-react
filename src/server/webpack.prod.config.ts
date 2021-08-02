@@ -22,7 +22,6 @@ const wdsConfig: WDS.Configuration = {
   watchContentBase: true
 };
 
-// tslint:disable:max-line-length
 const config: webpack.Configuration = {
   entry: resolve(__dirname, '../../src/client/index.tsx'),
   mode: 'production',
@@ -32,11 +31,11 @@ const config: webpack.Configuration = {
   },
 
   plugins: [
-    new NodemonPlugin.default({
+    new NodemonPlugin({
       ext: 'ts,tsx,js,json',
       script: resolve(__dirname, '../app/index.js'),
       watch: [resolve(__dirname, '../../src/app')]
-    }) as webpack.Plugin
+    })
   ],
 
   // Enable sourcemaps for debugging webpack's output.
@@ -48,23 +47,25 @@ const config: webpack.Configuration = {
 
   module: {
     rules: [
-      // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
-      { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
-      // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-      { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' }
+      // All output '.js' files will have any sourcemaps re-processed by
+      // 'source-map-loader'.
+      { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
+      // All files with a '.ts' or '.tsx' extension will be handled by
+      // 'ts-loader'.
+      { test: /\.tsx?$/, loader: 'ts-loader' }
     ]
   },
 
   // When importing a module whose path matches one of the following, just
   // assume a corresponding global variable exists and use that instead.
   // This is important because it allows us to avoid bundling all of our
-  // dependencies, which allows browsers to cache those libraries between builds.
+  // dependencies, which allows browsers to cache those libraries between
+  // builds.
   externals: {
     'react': 'React',
     'react-dom': 'ReactDOM'
   }
 };
-// tslint:enable:max-line-length
 
 const compiler = webpack(config);
 

@@ -9,6 +9,8 @@
     "noImplicitAny": true,
     "module": "commonjs",
     "strict": true,
+    // Necessary because nodemon-webpack-plugin uses implicit any.
+    "skipLibCheck": true,
     "target": "es5",
     "lib": ["dom", "es7", "es6"],
     "jsx": "react"
